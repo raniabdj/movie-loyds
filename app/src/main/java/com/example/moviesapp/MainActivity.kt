@@ -2,6 +2,7 @@ package com.example.moviesapp
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
@@ -16,6 +17,7 @@ import com.example.moviesapp.viewModels.SearchViewModel
 import com.example.moviesapp.viewModels.SearchViewModelFactory
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.snackbar.Snackbar
+import com.jackandphantom.carouselrecyclerview.CarouselLayoutManager
 
 
 class MainActivity : AppCompatActivity(), SelectedTitleListener {
@@ -37,11 +39,15 @@ class MainActivity : AppCompatActivity(), SelectedTitleListener {
         setContentView(binding.root)
 
         binding.searchResult.adapter = titlesAdapter
-        binding.searchResult.layoutManager =
-            GridLayoutManager(
-                this,
-                2
-            )
+        binding.searchResult.set3DItem(true)
+        binding.searchResult.setAlpha(true)
+//
+        binding.searchResult.setItemSelectListener(object : CarouselLayoutManager.OnSelected {
+            override fun onItemSelected(position: Int) {
+                //Cente item
+                Toast.makeText(this@MainActivity,titlesAdapter.getItem(position).title , Toast.LENGTH_LONG).show()
+            }
+        })
 
         configureObservers()
 
@@ -51,7 +57,7 @@ class MainActivity : AppCompatActivity(), SelectedTitleListener {
                 "EditText",
                 binding.searchBar.text.toString()
             )
-            viewModel.getSearchData("SearchSeries",binding.searchBar.text.toString())
+            viewModel.getSearchData("SearchSeries", binding.searchBar.text.toString())
             Snackbar.make(
                 binding.mainLayout,
                 "This is main activity ${binding.searchBar.text}",
@@ -90,8 +96,8 @@ class MainActivity : AppCompatActivity(), SelectedTitleListener {
 
 
         viewModel.searchLiveData.observe(this) {
-            println(it)
             titlesAdapter.setTitlesList(it.results)
+
         }
     }
 

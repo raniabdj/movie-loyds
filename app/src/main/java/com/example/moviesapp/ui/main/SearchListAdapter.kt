@@ -58,6 +58,10 @@ class SearchListAdapter(private val listener: SelectedTitleListener): RecyclerVi
     }
 
     override fun getItemCount() = titleList.size
+
+    fun getItem(position: Int): Titles {
+        return titleList[position];
+    }
 }
 
 class TitlesViewHolder(val binding: TitleCardViewBinding): RecyclerView.ViewHolder(binding.root)

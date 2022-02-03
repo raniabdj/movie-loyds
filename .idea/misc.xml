@@ -17,10 +17,11 @@
         <entry key="..\:/Users/hp/AndroidStudioProjects/moviesApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/moviesApp/app/src/main/res/layout/title_card_view.xml" value="0.5" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/moviesApp/app/src/main/res/layout/title_detail_page_fragment.xml" value="0.15353260869565216" />
+        <entry key="..\:/Users/ikbal/WorkPlace/ran/imdb_movies_training/app/src/main/res/layout/activity_main.xml" value="0.10989583333333333" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
