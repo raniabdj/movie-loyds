@@ -3,11 +3,61 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.main.TitleDetailPage">
 
-    <TextView
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello" />
+        android:orientation="vertical"
+        >
+        <TextView
+            android:id="@+id/movie_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Movie title"
+            android:textSize="30pt"
+            />
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/img_movie"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:src="@drawable/background_gradiant" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#000000" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            >
+
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                app:chipIcon="@drawable/ic_pic"
+                android:textSize="20sp"
+                android:text="hello"
+                android:layout_gravity="start"
+                />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:background="#000000" />
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                app:chipIcon="@drawable/ic_video"
+                android:textSize="20sp"
+                android:text="hello"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
 
 </FrameLayout>
