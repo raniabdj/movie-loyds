@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="200dp"
+    android:layout_height="300dp"
+    android:backgroundTint="@color/colorPrimary"
+    android:checkable="true"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardCornerRadius="30dp"
+    android:id="@+id/movieCard"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/moviePoster"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_gravity="bottom"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                >
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="70dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="start"
+                    app:chipSurfaceColor="@android:color/transparent"
+                    android:textColor="@color/amber"
+                    android:text="6.4"
+                    android:textSize="16sp"
+                    android:id="@+id/publicRate"
+                    />
+
+                <Space
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"/>
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="70dp"
+                    android:layout_height="40dp"
+                    android:backgroundTint="@color/amber"
+                    android:text="imdb 6.4"
+                    android:textSize="12sp"
+                    android:id="@+id/imdbRate"
+                    />
+
+            </LinearLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:fontFamily="sans-serif"
+                android:text="Movie name"
+                android:textAlignment="center"
+                android:textColor="#fff"
+                android:textSize="20pt"
+                app:fontFamily="@font/margarine"
+                android:id="@+id/movieTitle"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</com.google.android.material.card.MaterialCardView>
+

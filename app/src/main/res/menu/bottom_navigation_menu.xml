@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:enabled="true"
+        android:icon="@drawable/ic_home"
+        android:title="@string/text_label_1"/>
+    <item
+        android:id="@+id/explore"
+        android:enabled="true"
+        android:icon="@drawable/ic_explore"
+        android:title="@string/text_label_2"/>
+    <item
+        android:id="@+id/confirmation"
+        android:enabled="true"
+        android:icon="@drawable/ic_confirmation"
+        android:title="@string/text_label_3"/>
+    <item
+        android:id="@+id/person"
+        android:enabled="true"
+        android:icon="@drawable/ic_person"
+        android:title="@string/text_label_4"/>
+</menu>
