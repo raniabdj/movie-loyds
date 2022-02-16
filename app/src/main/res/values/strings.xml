@@ -14,4 +14,23 @@
     <string name="text_label_3">"confirmation"</string>
     <string name="text_label_4">"person"</string>
     <string name="search">Enter what you want to search</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="buttonback">Back button</string>
+    <string name="ratingBarDetail">Rating bar with star</string>
+    <string name="title">title</string>
+    <string name="searchButton">search button</string>
+    <string name="your_best_application">your_best_application</string>
+    <string name="email_address">email_address</string>
+    <string name="userLogin">userLogin</string>
+    <string name="password">password</string>
+    <string name="login">login</string>
+    <string name="forget_password">forget_password</string>
+    <string name="create_an_account">create_an_account</string>
+    <string name="first_name_">first_name</string>
+    <string name="last_name">last_name</string>
+    <string name="age">age</string>
+    <string name="register">register</string>
+    <string name="have_an_account">have an account</string>
+    <string name="films">Movies</string>
 </resources>

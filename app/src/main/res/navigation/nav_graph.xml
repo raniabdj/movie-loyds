@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/logIn">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.moviesapp.ui.fragments.MainFragment"
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_titleDetailFragment"
+            app:destination="@id/titleDetailFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_searchResultPage"
+            app:destination="@id/searchResultPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/titleDetailFragment"
+        android:name="com.example.moviesapp.ui.fragments.TitleDetailFragment"
+        android:label="title_detail_page_fragment"
+        tools:layout="@layout/title_detail_page_fragment" />
+    <fragment
+        android:id="@+id/searchResultPage"
+        android:name="com.example.moviesapp.ui.fragments.SearchResultPage"
+        android:label="search_result_page_fragment"
+        tools:layout="@layout/search_result_page_fragment" >
+        <action
+            android:id="@+id/action_searchResultPage_to_titleDetailFragment"
+            app:destination="@id/titleDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/logIn"
+        android:name="com.example.moviesapp.ui.fragments.logIn"
+        android:label="fragment_log_in"
+        tools:layout="@layout/fragment_log_in" >
+        <action
+            android:id="@+id/action_logIn_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_logIn_to_createAnacc"
+            app:destination="@id/createAnacc" />
+    </fragment>
+    <fragment
+        android:id="@+id/createAnacc"
+        android:name="com.example.moviesapp.ui.fragments.CreateAnacc"
+        android:label="CreateAnacc" >
+        <action
+            android:id="@+id/action_createAnacc_to_logIn"
+            app:destination="@id/logIn" />
+    </fragment>
+</navigation>

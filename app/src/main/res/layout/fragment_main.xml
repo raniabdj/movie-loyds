@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.MainFragment">
+
+    <LinearLayout
+        android:id="@+id/mainContanerFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_gradiant"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switchMod"
+                android:layout_width="60dp"
+                android:layout_height="48dp" />
+            <TextView
+                android:id="@+id/mode"
+                android:layout_weight="3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:textColor="#fff"
+                android:textSize="14pt"
+                android:text="@string/films"/>
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="50dp"
+                android:id="@+id/closeBtn"
+                android:backgroundTint="#E62618"
+                app:icon="@drawable/ic_log_out"
+                android:layout_gravity="end"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="20dp"
+            android:paddingEnd="5dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/searchBar"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="20dp"
+                android:layout_weight="2"
+                android:background="@drawable/search_bar"
+                android:hint="@string/search"
+                android:imeOptions="actionDone"
+                android:importantForAutofill="no"
+                android:singleLine="true"
+                android:textAlignment="center"
+                android:textColor="#fff"
+                android:textColorHint="@color/amber" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/lunchSearch"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:backgroundTint="@android:color/transparent"
+                android:contentDescription="@string/searchButton"
+                android:padding="10dp"
+                android:text=""
+                app:icon="@drawable/ic_search"
+                app:strokeColor="@android:color/transparent" />
+
+
+        </LinearLayout>
+
+        <com.jackandphantom.carouselrecyclerview.CarouselRecyclerview
+            android:id="@+id/searchResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            tools:layout_editor_absoluteX="16dp"
+
+            />
+
+
+    </LinearLayout>
+
+</FrameLayout>

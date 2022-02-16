@@ -8,6 +8,7 @@
         <entry key="..\:/Users/hp/AndroidStudioProjects/moviesApp/app/src/main/res/drawable-anydpi/ic_home.xml" value="0.204" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/moviesApp/app/src/main/res/drawable-anydpi/ic_person.xml" value="0.204" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/moviesApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.204" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/moviesApp/app/src/main/res/drawable/backgound_series.xml" value="0.1395" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/moviesApp/app/src/main/res/drawable/background_gradiant.xml" value="0.2005" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/moviesApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.204" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/moviesApp/app/src/main/res/drawable/search_bar.xml" value="0.2005" />
@@ -15,8 +16,15 @@
         <entry key="..\:/Users/hp/AndroidStudioProjects/moviesApp/app/src/main/res/layout-w936dp/activity_login.xml" value="0.153125" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/moviesApp/app/src/main/res/layout/activity_login.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/moviesApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/hp/AndroidStudioProjects/moviesApp/app/src/main/res/layout/title_card_view.xml" value="0.5" />
-        <entry key="..\:/Users/hp/AndroidStudioProjects/moviesApp/app/src/main/res/layout/title_detail_page_fragment.xml" value="0.25" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/moviesApp/app/src/main/res/layout/fragment_create_an_account.xml" value="0.19270833333333334" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/moviesApp/app/src/main/res/layout/fragment_log_in.xml" value="0.12" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/moviesApp/app/src/main/res/layout/fragment_main.xml" value="0.19270833333333334" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/moviesApp/app/src/main/res/layout/fragment_title_detail.xml" value="0.19270833333333334" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/moviesApp/app/src/main/res/layout/logintest.xml" value="0.33" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/moviesApp/app/src/main/res/layout/results_list_item.xml" value="0.17864583333333334" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/moviesApp/app/src/main/res/layout/search_result_page_fragment.xml" value="0.19270833333333334" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/moviesApp/app/src/main/res/layout/title_card_view.xml" value="0.22" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/moviesApp/app/src/main/res/layout/title_detail_page_fragment.xml" value="0.22" />
       </map>
     </option>
   </component>

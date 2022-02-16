@@ -1,60 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.main.TitleDetailPage">
-
+    tools:context=".ui.fragments.TitleDetailFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@android:color/transparent"
+            android:contentDescription="@string/buttonback"
+            android:elevation="0dp"
+            app:icon="@drawable/ic_back"
+            app:strokeColor="@android:color/transparent" />
+
         <TextView
-            android:id="@+id/movie_title"
+            android:id="@+id/title_mv"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Movie title"
-            android:textSize="30pt"
-            />
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/img_movie"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:src="@drawable/background_gradiant" />
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#000000" />
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="@string/title"
+            android:textColor="@color/amber"
+            android:textSize="30sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            >
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="9"
+            android:orientation="vertical">
 
-            <com.google.android.material.chip.Chip
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                app:chipIcon="@drawable/ic_pic"
-                android:textSize="20sp"
-                android:text="hello"
-                android:layout_gravity="start"
-                />
-            <View
-                android:layout_width="1dp"
-                android:layout_height="fill_parent"
-                android:background="#000000" />
-            <com.google.android.material.chip.Chip
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                app:chipIcon="@drawable/ic_video"
-                android:textSize="20sp"
-                android:text="hello"
-                />
+            <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+                android:id="@+id/youtube_player_view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3"
+                app:autoPlay="true"
+                app:videoId="Jvurpf91omw" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:orientation="vertical">
+
+                <RatingBar
+                    android:id="@+id/mvRating"
+                    style="@style/Widget.AppCompat.RatingBar.Indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:numStars="5"
+                    android:rating="4"
+                    android:layout_marginTop="@dimen/grid_half_2x"
+
+                    app:layout_constraintStart_toStartOf="@id/movieTitle"
+                    app:layout_constraintTop_toBottomOf="@id/movieTitle" />
+
+
+            </LinearLayout>
 
         </LinearLayout>
     </LinearLayout>

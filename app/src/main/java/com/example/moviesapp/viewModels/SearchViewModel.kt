@@ -24,8 +24,7 @@ class SearchViewModel(private val repository: SearchRepository) : ViewModel() {
         _statusLiveData.postValue(Status.LOADING)
         viewModelScope.launch {
             val response = repository.getResults(type,title)
-            println("----------------------------------------------------------")
-            println(response.body())
+
             if (response.isSuccessful) {
                 _searchLiveData.postValue(response.body())
                 _statusLiveData.postValue(Status.SUCCESS)

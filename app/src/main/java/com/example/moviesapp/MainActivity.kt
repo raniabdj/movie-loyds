@@ -1,102 +1,73 @@
 package com.example.moviesapp
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.GridLayoutManager
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
 import com.example.moviesapp.databinding.ActivityMainBinding
-import com.example.moviesapp.model.Titles
-import com.example.moviesapp.repositories.SearchRepository
-import com.example.moviesapp.services.SearchService
-import com.example.moviesapp.ui.main.SearchListAdapter
-import com.example.moviesapp.utils.SelectedTitleListener
-import com.example.moviesapp.utils.Status
-import com.example.moviesapp.viewModels.SearchViewModel
-import com.example.moviesapp.viewModels.SearchViewModelFactory
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.FirebaseApp
 
 
-class MainActivity : AppCompatActivity(), SelectedTitleListener {
+class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private val service = SearchService.getInstance()
-    private val repository = SearchRepository(service)
-    private val viewModel: SearchViewModel by lazy {
-        ViewModelProvider(
-            this,
-            SearchViewModelFactory(repository)
-        )[SearchViewModel::class.java]
-    }
-    private val titlesAdapter = SearchListAdapter(this)
+
+
+    private lateinit var navController: NavController
+    var bottomNavigationView: BottomNavigationView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        binding.searchResult.adapter = titlesAdapter
-        binding.searchResult.layoutManager =
-            GridLayoutManager(
-                this,
-                2
-            )
-
-        configureObservers()
+        FirebaseApp.initializeApp(this);
 
 
-        binding.lunchSearch.setOnClickListener {
-            Log.v(
-                "EditText",
-                binding.searchBar.text.toString()
-            )
-            viewModel.getSearchData("SearchSeries",binding.searchBar.text.toString())
-            Snackbar.make(
-                binding.mainLayout,
-                "This is main activity ${binding.searchBar.text}",
-                Snackbar.LENGTH_LONG
-            )
-                .setAction("CLOSE") { }
-                .setActionTextColor(resources.getColor(android.R.color.holo_red_light))
-                .show()
-        }
+        setUpNavigation()
 
-
-        BottomNavigationView.OnNavigationItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.home -> {
-                    // Respond to navigation item 1 click
-                    true
-                }
-                R.id.explore -> {
-                    // Respond to navigation item 2 click
-                    true
-                }
-                R.id.confirmation -> {
-                    // Respond to navigation item 2 click
-                    true
-                }
-                R.id.person -> {
-                    // Respond to navigation item 2 click
-                    true
-                }
-                else -> false
-            }
-        }
+    //    BottomNavigationView.OnNavigationItemSelectedListener { item ->
+    //        when (item.itemId) {
+    //            R.id.home -> {
+    //                // Respond to navigation item 1 click
+    //                true
+    //            }
+    //            R.id.explore -> {
+    //                // Respond to navigation item 2 click
+    //                true
+    //            }
+    //            R.id.confirmation -> {
+    //                // Respond to navigation item 2 click
+    //                true
+    //            }
+    //            R.id.person -> {
+    //                // Respond to navigation item 2 click
+    //                true
+    //            }
+    //            else -> false
+    //        }
+    //    }
     }
 
-    private fun configureObservers() {
+    fun setUpNavigation() {
+        bottomNavigationView = binding.bottomNavigation
+        val navHostFragment = supportFragmentManager
+            .findFragmentById(R.id.nav_host_fragment) as NavHostFragment?
 
+        NavigationUI.setupWithNavController(
+            bottomNavigationView!!,
+            navHostFragment!!.navController,
+        )
+        //bottomNavigationView = findViewById(com.example.lookupweather.R.id.bottomNav)
 
-        viewModel.searchLiveData.observe(this) {
-            println(it)
-            titlesAdapter.setTitlesList(it.results)
-        }
     }
 
-    override fun onSelectedTitle(selected: Titles) {
-        TODO("Not yet implemented")
+
+
+    override fun onSupportNavigateUp(): Boolean {
+        return NavigationUI.navigateUp(navController, null)
     }
+
 
 }

@@ -4,8 +4,8 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="200dp"
-    android:layout_height="300dp"
+    android:layout_width="300dp"
+    android:layout_height="400dp"
     android:backgroundTint="@color/colorPrimary"
     android:checkable="true"
     android:clickable="true"
@@ -42,7 +42,7 @@
                     />
 
                 <Space
-                    android:layout_width="60dp"
+                    android:layout_width="160dp"
                     android:layout_height="wrap_content"/>
 
                 <com.google.android.material.chip.Chip
@@ -56,17 +56,26 @@
 
             </LinearLayout>
 
-            <com.google.android.material.textview.MaterialTextView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:fontFamily="sans-serif"
-                android:text="Movie name"
-                android:textAlignment="center"
-                android:textColor="#fff"
-                android:textSize="20pt"
-                app:fontFamily="@font/margarine"
-                android:id="@+id/movieTitle"
-                />
+                android:background="#4A0C0000"
+                android:layout_height="match_parent">
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:fontFamily="sans-serif"
+                    android:text="Movie name"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:textColor="@color/amber"
+                    android:textSize="14pt"
+                    app:fontFamily="@font/margarine"
+                    android:id="@+id/movieTitle"
+                    />
+
+            </LinearLayout>
+
+
         </LinearLayout>
     </LinearLayout>
 
