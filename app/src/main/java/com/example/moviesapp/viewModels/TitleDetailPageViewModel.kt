@@ -22,12 +22,12 @@ class TitleDetailPageViewModel(private val repository: TitlesRepository) : ViewM
         viewModelScope.launch {
             val response = repository.getDetails(videoId )
             println(" detail ----------------------------------------------------------")
-            if (response.isSuccessful) {
-                _titleDetailLiveData.postValue(response.body())
+          //  if (response.isSuccessful) {
+              //  _titleDetailLiveData.postValue(response.body())
                 //_statusLiveData.postValue(Status.SUCCESS)
-            } else {
+            //} else {
                 // _statusLiveData.postValue(Status.ERROR)
-            }
+           // }
         }
     }
 

@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.moviesapp.databinding.TitleDetailPageFragmentBinding
 import com.example.moviesapp.model.RankedTitle
 import com.example.moviesapp.repositories.TitlesRepository
+import com.example.moviesapp.services.TitleServiceClient
 import com.example.moviesapp.services.TitlesService
 import com.example.moviesapp.utils.SelectedRankedTitleListener
 import com.example.moviesapp.viewModels.RankingResultViewModel
@@ -33,7 +34,7 @@ class TitleDetailFragment : Fragment(), SelectedRankedTitleListener {
         }
     }
 
-    private val service = TitlesService.getInstance()
+    private val service:TitlesService = TitleServiceClient.getClient()
     private val repository = TitlesRepository(service)
     private val viewModel: TitleDetailPageViewModel by lazy {
         ViewModelProvider(

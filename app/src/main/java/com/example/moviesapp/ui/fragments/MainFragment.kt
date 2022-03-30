@@ -14,6 +14,7 @@ import com.example.moviesapp.databinding.FragmentMainBinding
 import com.example.moviesapp.model.RankedTitle
 import com.example.moviesapp.model.Titles
 import com.example.moviesapp.repositories.TitlesRepository
+import com.example.moviesapp.services.TitleServiceClient
 import com.example.moviesapp.services.TitlesService
 import com.example.moviesapp.ui.main.RankingAdapter
 import com.example.moviesapp.utils.SelectedRankedTitleListener
@@ -45,7 +46,7 @@ class MainFragment : Fragment(), SelectedRankedTitleListener {
         }
     }
 
-    private val service = TitlesService.getInstance()
+    private val service:TitlesService =TitleServiceClient.getClient()
     private val repository = TitlesRepository(service)
     private val viewModel: RankingResultViewModel by lazy {
         ViewModelProvider(

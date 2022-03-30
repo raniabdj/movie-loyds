@@ -4,6 +4,7 @@ import com.example.moviesapp.model.RankResponse
 import com.example.moviesapp.model.RankedTitle
 import com.example.moviesapp.model.SearchData
 import com.example.moviesapp.model.TitleDetailes
+import io.reactivex.Single
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -22,21 +23,8 @@ interface TitlesService {
     @GET("YouTubeTrailer/k_1glq0o5b/{id}")
     suspend fun getTitleDetails(
         @Path("id") id: String,
-    ): Response<TitleDetailes>
+    ): Single<TitleDetailes>
 
-    companion object {
-        var retrofitService: TitlesService? = null
-        fun getInstance(): TitlesService {
-            if (retrofitService == null) {
-                val retrofit = Retrofit.Builder()
-                    .baseUrl("https://imdb-api.com/en/API/")
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build()
-                retrofitService = retrofit.create(TitlesService::class.java)
-            }
-            return retrofitService!!
-        }
 
-    }
 
 }

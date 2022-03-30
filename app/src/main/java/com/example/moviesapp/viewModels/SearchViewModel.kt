@@ -6,32 +6,29 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.moviesapp.model.SearchData
+import com.example.moviesapp.repositories.SearchDataSource
 import com.example.moviesapp.repositories.SearchRepository
+import com.example.moviesapp.utils.NetworkState
 import com.example.moviesapp.utils.Status
+import io.reactivex.disposables.CompositeDisposable
 import kotlinx.coroutines.launch
 
-class SearchViewModel(private val repository: SearchRepository) : ViewModel() {
+class SearchViewModel(private val repository: SearchRepository,type:String,title:String) : ViewModel() {
 
-    private val _searchLiveData = MutableLiveData<SearchData>()
-    val searchLiveData: LiveData<SearchData>
-        get() = _searchLiveData
+    private val compositDisposable = CompositeDisposable()
 
-    private val _statusLiveData = MutableLiveData<Status>()
-    val statusLiveData: LiveData<Status>
-        get() = _statusLiveData
+    val searchData : LiveData<SearchData> by lazy {
+        repository.fetchDataResulte(compositDisposable,type,title)
+    }
+    val networkState: LiveData<NetworkState> by lazy{
+        repository.getSearchDataNetworkState()
 
-    fun getSearchData(type: String, title: String) {
-        _statusLiveData.postValue(Status.LOADING)
-        viewModelScope.launch {
-            val response = repository.getResults(type,title)
 
-            if (response.isSuccessful) {
-                _searchLiveData.postValue(response.body())
-                _statusLiveData.postValue(Status.SUCCESS)
-            } else {
-                _statusLiveData.postValue(Status.ERROR)
-            }
-        }
+    }
+    override fun onCleared() {
+        super.onCleared()
+        compositDisposable.dispose()
     }
 
 }
+

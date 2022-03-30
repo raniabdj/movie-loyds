@@ -2,7 +2,7 @@ package com.example.moviesapp.utils
 
 enum class Status {
     SUCCESS,
-    LOADING,
+    RUNNING,
     ERROR,
     SELECTED
 }
